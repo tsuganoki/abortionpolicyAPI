@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% block title %} Abortion Policy API {% endblock %}
+
+{% block js %}   <script src="static/js/index.jsx" type="text/jsx"></script>
+{% endblock %}
+
+{% block content %} 
+    
+<div class="container">
+	<h1>Abortion Policy API</h1>
+
+	<p>Browse the API (coming soon!)</p>
+	
+	<div class="hidden">APPLE APPLE APPLE APPLE </div>
+
+
+<button id='getInfo'>Get Information!</button>
+<p>
+  <ul>
+    <li><b>Climate:</b> <span id='climate'>Unknown</span></li>
+    <li><b>Terrain:</b> <span id='terrain'>Unknown</span></li>
+    <li><b>Population:</b> <span id='population'>Unknown</span></li>
+  </ul>
+</p>
+
+</div>
+ <script src="/static/js/index.js"> </script>
+ <script>
+   console.log("index.html")
+ </script>
+
+{% endblock %}

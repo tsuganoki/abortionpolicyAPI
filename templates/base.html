@@ -1,0 +1,23 @@
+<html>
+<head>
+  <title>{% block title %}template title {% endblock %}</title>
+
+  <script src="/static/js/jquery-3.3.1.min.js"> </script>
+
+
+	<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <link rel="stylesheet" href="/static/css/styles.css">
+
+{% block js %}  {% endblock %}
+
+</head>
+
+
+<body>
+
+	{% block content %} content goes here {% endblock %}
+	
+	
+</body>
+</html>
