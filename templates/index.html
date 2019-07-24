@@ -8,26 +8,38 @@
 {% block content %} 
     
 <div class="container">
-	<h1>Abortion Policy API</h1>
+    <h1>Abortion Policy API</h1>
 
-	<p>Browse the API (coming soon!)</p>
-	
-	<div class="hidden">APPLE APPLE APPLE APPLE </div>
+    <p>I'm interested in: </p>
+
+    <p>(check all that apply)</p>
 
 
-<button id='getInfo'>Get Information!</button>
-<p>
-  <ul>
-    <li><b>Climate:</b> <span id='climate'>Unknown</span></li>
-    <li><b>Terrain:</b> <span id='terrain'>Unknown</span></li>
-    <li><b>Population:</b> <span id='population'>Unknown</span></li>
-  </ul>
-</p>
+    
+    
+    
+    
 
+<form action="/result">
+  <input type="checkbox" name="topic" value="gestational_limits"> Gestational Limits<br>
+  <input type="checkbox" name="topic" value="insurance"> Insurance Coverage<br>
+  <input type="checkbox" name="topic" value="minors"> Minors<br>
+  <input type="checkbox" name="topic" value="waiting_periods"> Waiting Periods<br>
+   <span class="small-text">Check All<br /><br /></span>
+<p> Location: </p>
+<input type="text" name="zip_code" placeholder='select zip code'> </select> or 
+  <select type="dropdown" name="state">
+    <option value="" disabled selected>Select State</option>
+    {% for state_code in us_states %}
+          <option value={{state_code}} placeholder='Select state'>{{us_states[state_code]}}</option>
+          {% endfor %}
+  </select>
+  <input type="submit">
+</form>
 </div>
  <script src="/static/js/index.js"> </script>
- <script>
+<!--  <script>
    console.log("index.html")
  </script>
-
+ -->
 {% endblock %}

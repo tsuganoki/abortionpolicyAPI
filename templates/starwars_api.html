@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+
+{% block title %} Abortion Policy API {% endblock %}
+
+{% block js %}   <script src="static/js/index.jsx" type="text/jsx"></script>
+{% endblock %}
+
+{% block content %} 
+    
+<div class="container">
+	<h1>starwars API</h1>
+
+	<p>Browse the API (coming soon!)</p>
+	
+	<div class="hidden">APPLE APPLE APPLE APPLE </div>
+
+
+<button id='getInfo'>Get Information!</button>
+<p>
+  <ul>
+    <li><b>Climate:</b> <span id='climate'>Unknown</span></li>
+    <li><b>Terrain:</b> <span id='terrain'>Unknown</span></li>
+    <li><b>Population:</b> <span id='population'>Unknown</span></li>
+  </ul>
+</p>
+
+<form action="/state">
+  <select type="dropdown" name="state">
+    {% for state_code in us_states %}
+          <option value={{state_code}}>{{us_states[state_code]}}</option>
+          {% endfor %}
+  </select>
+  <input type="submit">
+</form>
+
+</div>
+ <script src="/static/js/starwars_api.js"> </script>
+ <script>
+   console.log("index.html")
+ </script>
+
+{% endblock %}

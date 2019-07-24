@@ -73,6 +73,11 @@ h3:before {
   height: 300px;
 }
 
+.sm {
+    font-size: small;
+    color: blue;
+}
+
 #attack {
   background: red;
   color: white;
@@ -89,3 +94,4 @@ h3:before {
   visibility: hidden;
 
 }
+
