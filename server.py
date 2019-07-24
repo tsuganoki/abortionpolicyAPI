@@ -46,21 +46,50 @@ def get_results():
     """Show the results page"""
     # print(session.get("state",''))
 
-    topics = request.args.getlist('topic')
+    topics = set(request.args.getlist('topic'))
     # print("topics: ",topics)
     
     state = request.args.get('state','')
     zip_code = request.args.get('zip_code','')
-    
-    if state:
-        url = 'https://api.abortionpolicyapi.com/v1/gestational_limits/states/'+ state
-    elif zip_code:
-        url = 'https://api.abortionpolicyapi.com/v1/gestational_limits/zip/' + zip_code
 
-    headers = { 'token': apikey }
-    r = requests.get(url, headers=headers)
-    print("url is: " + url)
-    data = r.json()
+    data = {}
+    
+
+    if 'gestational_limits' in topics:
+        if state:
+            url = 'https://api.abortionpolicyapi.com/v1/gestational_limits/states/'+ state
+        elif zip_code:
+            url = 'https://api.abortionpolicyapi.com/v1/gestational_limits/zips/' + zip_code
+        headers = { 'token': apikey }
+        r = requests.get(url, headers=headers)
+        data['gestational_limits'] = r.json()
+    if 'insurance' in topics:
+        if state:
+            url = 'https://api.abortionpolicyapi.com/v1/insurance_coverage/states/'+ state
+        elif zip_code:
+            url = 'https://api.abortionpolicyapi.com/v1/insurance_coverage/zips/' + zip_code
+        headers = { 'token': apikey }
+        r = requests.get(url, headers=headers)
+        data['insurance'] = r.json()
+
+    if 'minors' in topics:
+        if state:
+            url = 'https://api.abortionpolicyapi.com/v1/minors/states/'+ state
+        elif zip_code:
+            url = 'https://api.abortionpolicyapi.com/v1/minors/zips/' + zip_code
+        headers = { 'token': apikey }
+        r = requests.get(url, headers=headers)
+        data['minors'] = r.json()
+
+    if 'waiting_periods' in topics:
+        if state:
+            url = 'https://api.abortionpolicyapi.com/v1/waiting_periods/states/'+ state
+        elif zip_code:
+            url = 'https://api.abortionpolicyapi.com/v1/waiting_periods/zips/' + zip_code
+        headers = { 'token': apikey }
+        r = requests.get(url, headers=headers)
+        data['waiting_periods'] = r.json()
+
 
 # states = r.json()
 

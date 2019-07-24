@@ -11,7 +11,9 @@
 	<h1>Abortion Policy API</h1>
 
     <p>
-      {{data}}
+      {% for topic in data.items() %}
+      	<p>{{topic}}</p>
+      	{% endfor %}
     </p>
 
 </div>

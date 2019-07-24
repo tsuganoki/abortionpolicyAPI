@@ -8,6 +8,8 @@
 
   // function for making sure you check at least one check box
 
+  
+
   // function for checking all check boxes
 
   // function for selecting just one or the other of the location options
