@@ -12,7 +12,8 @@
 
     <p>
       {% for topic in data.items() %}
-      	<p>{{topic}}</p>
+      	<p>{{topic[0]}}</p>
+      	<p> {{topic[1:]}}
       	{% endfor %}
     </p>
 
