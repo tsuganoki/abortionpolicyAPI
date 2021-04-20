@@ -23,7 +23,7 @@ Pillow==4.1.1
 pluggy==0.6.0
 prompt-toolkit==2.0.4
 ptyprocess==0.6.0
-py==1.5.3
+py==1.10.0
 Pygments==2.2.0
 PyMsgBox==1.0.4
 pynput==1.4
